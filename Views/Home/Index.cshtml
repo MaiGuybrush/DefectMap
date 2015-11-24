@@ -1,0 +1,14 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(function(){
+        var layoutConfig = @Html.Raw(JsonConvert.SerializeObject(ViewBag.LayoutConfig));
+        $('#defectMap').append($('<g>').attr('transform', 'translate(1100, 1300) scale(1 -1))'));
+
+    });
+</script>
+<svg id="defectMap" width="600" height="800" viewBox="0 0 800 600">
+</svg>
